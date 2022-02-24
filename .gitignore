@@ -1,0 +1,5 @@
+/.git
+/.idea
+/target
+browsers.json
+tests.iml
