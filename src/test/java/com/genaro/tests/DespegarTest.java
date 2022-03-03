@@ -1,10 +1,10 @@
 package com.genaro.tests;
 
+import com.selenium.driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,6 +14,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 import java.util.Set;
 
 
@@ -26,17 +27,11 @@ public class DespegarTest {
 
     @BeforeMethod
     public void initTest() {
-        //set driver
-        System.setProperty("webdriver.chrome.driver", "C:/Users/Genaro/Desktop/QA Automation/Drivers/Chrome/chromedriver.exe");
-
         //init driver
-        driver = new ChromeDriver();
-
-        //maximizamos el navegador
-        driver.manage().window().maximize();
+        driver = Driver.LevantarBrowser(driver, "CHROME");
 
         //init waiter
-        wait = new WebDriverWait(driver, 5);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
         //ir a despegar.com
         driver.get("https://www.despegar.com.ar");
@@ -134,6 +129,6 @@ public class DespegarTest {
 
     @AfterMethod
     public void cerrarSesion() {
-        driver.quit();
+        Driver.CloseBrowser(driver);
     }
 }
