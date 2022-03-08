@@ -123,7 +123,7 @@ public class DespegarTest {
         WebElement modificar = driver.findElement(By.cssSelector("div.re-search-main-col>ul li>a em"));
         modificar.click();
         WebElement modalIsOpen = driver.findElement(By.cssSelector("aloha-re-search>div.-show-content"));
-        Assert.assertTrue(modalIsOpen.isDisplayed());
+        Assert.assertTrue(modalIsOpen.isDisplayed(), "El modal no se abre");
 
     }
 

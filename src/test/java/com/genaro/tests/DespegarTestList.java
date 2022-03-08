@@ -39,8 +39,8 @@ public class DespegarTestList {
 
         for(WebElement button : buttonList) {
             System.out.println(button.getText());
-            Assert.assertTrue(button.isDisplayed());
-            Assert.assertNotNull(button.getText());
+            Assert.assertTrue(button.isDisplayed(), "El boton no es visible");
+            Assert.assertNotNull(button.getText(), "El botton no tiene texto");
         }
     }
 
