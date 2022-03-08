@@ -15,7 +15,6 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
-import java.util.Set;
 
 
 public class DespegarTest {
@@ -111,13 +110,7 @@ public class DespegarTest {
         seleccionarHotel.click();
 
         //hacer focus en la nueva pestaña
-        Set<String> handles = driver.getWindowHandles();
-
-        for(String actual : handles) {
-            if(!actual.equalsIgnoreCase(driver.getWindowHandle())) {
-                driver.switchTo().window(actual);
-            }
-        }
+        Utils.changePage(driver);
 
         //Testear funcionalidad "Modificar"
         WebElement modificar = driver.findElement(By.cssSelector("div.re-search-main-col>ul li>a em"));
