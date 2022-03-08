@@ -11,7 +11,7 @@ public class Driver {
         CHROME, FIREFOX, EDGE
     }
 
-    public static WebDriver LevantarBrowser(WebDriver driver, String browserName) {
+    public static WebDriver LevantarBrowser(WebDriver driver, String browserName, String url) {
         switch(browsers.valueOf(browserName)) {
             case CHROME:
             {
@@ -46,6 +46,8 @@ public class Driver {
 
         //maximizamos el navegador
         driver.manage().window().maximize();
+
+        driver.get(url);
 
         return driver;
     }

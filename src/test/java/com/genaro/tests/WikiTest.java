@@ -16,10 +16,7 @@ public class WikiTest {
     @BeforeMethod
     public void initTest() {
         //init driver
-        driver = Driver.LevantarBrowser(driver, "CHROME");
-
-        //ir a wikipedia.org
-        driver.get("http://wikipedia.org");
+        driver = Driver.LevantarBrowser(driver, "CHROME", "http://wikipedia.org");
     }
 
 

@@ -23,13 +23,10 @@ public class DespegarTestList {
     @BeforeMethod
     public void initTest() {
         //init driver
-        driver = Driver.LevantarBrowser(driver, "CHROME");
+        driver = Driver.LevantarBrowser(driver, "CHROME", "https://www.despegar.com.ar");
 
         //init waiter
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-
-        //ir a despegar.com
-        driver.get("https://www.despegar.com.ar");
     }
 
     @Test(description = "Testear botones superiores")
