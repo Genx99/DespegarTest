@@ -1,9 +1,9 @@
 package com.genaro.tests;
 
 import com.selenium.driver.Driver;
-import org.openqa.selenium.By;
+import com.selenium.pages.WikiHomePage;
+import com.selenium.pages.WikiResultsPage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -27,14 +27,13 @@ public class WikiTest {
 
     @Test(description = "Validar que las busquedas en Wikipedia funcionan", dataProvider = "busquedas")
     public void ValidarBusquedaWikipedia(String busquedas) throws Exception {
-        WebElement searchInput = driver.findElement(By.id("searchInput"));
-        Assert.assertTrue(searchInput.isDisplayed());
-        searchInput.sendKeys(busquedas);
-        searchInput.submit();
+        WikiHomePage homePage = new WikiHomePage(driver);
 
-        WebElement tituloResultado = driver.findElement(By.id("firstHeading"));
-        System.out.println("Texto encontrado "+ tituloResultado.getText());
-        Assert.assertTrue(tituloResultado.isDisplayed());
+        Assert.assertTrue(homePage.searchInputIsVisible(), "El input no esta visible");
+
+        WikiResultsPage wikiResultsPage = homePage.searchText(busquedas);
+
+        Assert.assertTrue(wikiResultsPage.tituloIsDisplayed());
     }
 
     @AfterMethod
