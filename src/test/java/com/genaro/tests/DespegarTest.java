@@ -6,7 +6,9 @@ import com.selenium.pages.DespegarHotelPage;
 import com.selenium.pages.DespegarMainPage;
 import com.selenium.pages.DespegarResultsPage;
 import com.selenium.utils.Utils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.ITestContext;
@@ -16,6 +18,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+import java.util.List;
 
 
 public class DespegarTest {
@@ -46,7 +49,7 @@ public class DespegarTest {
         return new Object[][] {{"Cordoba"}, {"Mendoza"}, {"San Juan"}};
     }
 
-    @Test(description = "Navegar a hotel y testear funcionalidad Modificar", dataProvider = "lugares")
+    @Test(groups={"Navegar a Hotel"}, description = "Navegar a hotel y testear funcionalidad Modificar", dataProvider = "lugares")
     public void navegarHotel(String lugares) throws Exception {
 
         DespegarMainPage mainPage = new DespegarMainPage(driver);
@@ -80,6 +83,18 @@ public class DespegarTest {
 
         //Testear funcionalidad "Modificar"
         Assert.assertTrue(hotelPage.modificarModalIsOpen(), "El modal no se abre");
+    }
+
+    @Test(groups={"Test Buttons"}, description = "Test botones de seccion")
+    public void testButtons() throws Exception {
+        //seleccionar el anchor link "Alojamiento" y darle click
+        List<WebElement> buttonList = driver.findElements(By.cssSelector("div.header-products-container ul li"));
+
+        for(WebElement button : buttonList) {
+            System.out.println(button.getText());
+            Assert.assertTrue(button.isDisplayed(), "El boton no es visible");
+            Assert.assertNotNull(button.getText(), "El botton no tiene texto");
+        }
     }
 
     @AfterMethod(alwaysRun = true)

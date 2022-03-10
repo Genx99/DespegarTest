@@ -3,14 +3,16 @@
 <suite name="All Test Suite">
     <parameter name="Navegador" value="CHROME"/>
     <test verbose="2" preserve-order="true" name="C:/Users/Genaro/Desktop/QA Automation/Curso/tests">
+        <groups>
+            <run>
+                <include name="Navegar a Hotel"/>
+                <exclude name="Test Buttons"/>
+            </run>
+        </groups>
         <classes>
             <class name="com.genaro.tests.DespegarTest">
                 <methods>
                     <include name="navegarHotel"/>
-                </methods>
-            </class>
-            <class name="com.genaro.tests.DespegarTestList">
-                <methods>
                     <include name="testButtons"/>
                 </methods>
             </class>
