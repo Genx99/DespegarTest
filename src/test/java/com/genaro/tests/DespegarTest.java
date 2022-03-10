@@ -6,7 +6,6 @@ import com.selenium.pages.DespegarHotelPage;
 import com.selenium.pages.DespegarMainPage;
 import com.selenium.pages.DespegarResultsPage;
 import com.selenium.utils.Utils;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -87,8 +86,9 @@ public class DespegarTest {
 
     @Test(groups={"Test Buttons"}, description = "Test botones de seccion")
     public void testButtons() throws Exception {
-        //seleccionar el anchor link "Alojamiento" y darle click
-        List<WebElement> buttonList = driver.findElements(By.cssSelector("div.header-products-container ul li"));
+        DespegarMainPage mainPage = new DespegarMainPage(driver);
+
+        List<WebElement> buttonList = mainPage.getButtonsList();
 
         for(WebElement button : buttonList) {
             System.out.println(button.getText());

@@ -5,22 +5,17 @@
     <test verbose="2" preserve-order="true" name="C:/Users/Genaro/Desktop/QA Automation/Curso/tests">
         <groups>
             <run>
+                <!-- Despegar Test -->
                 <include name="Navegar a Hotel"/>
                 <exclude name="Test Buttons"/>
+
+                <!-- Wiki Test -->
+                <include name="Test Busquedas" />
             </run>
         </groups>
         <classes>
-            <class name="com.genaro.tests.DespegarTest">
-                <methods>
-                    <include name="navegarHotel"/>
-                    <include name="testButtons"/>
-                </methods>
-            </class>
-            <class name="com.genaro.tests.WikiTest">
-                <methods>
-                    <include name="ValidarBusquedaWikipedia"/>
-                </methods>
-            </class>
+            <class name="com.genaro.tests.DespegarTest" />
+            <class name="com.genaro.tests.WikiTest" />
         </classes>
     </test>
 </suite>

@@ -33,7 +33,7 @@ public class WikiTest {
         return new Object[][] {{"Selenium"}, {"TestNG"}, {"Java"}};
     }
 
-    @Test(description = "Validar que las busquedas en Wikipedia funcionan", dataProvider = "busquedas")
+    @Test(groups={"Test Busquedas"}, description = "Validar que las busquedas en Wikipedia funcionan", dataProvider = "busquedas")
     public void ValidarBusquedaWikipedia(String busquedas) throws Exception {
         WikiHomePage homePage = new WikiHomePage(driver);
 

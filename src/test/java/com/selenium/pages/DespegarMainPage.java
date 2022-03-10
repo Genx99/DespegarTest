@@ -5,9 +5,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class DespegarMainPage {
     @FindBy(css = "div.header-products-container>ul>li>a[title='Alojamientos']")
     WebElement alojamientoButton;
+    @FindBy(css = "div.header-products-container ul li")
+    List<WebElement> buttonsList;
 
     private WebDriver driver = null;
 
@@ -20,5 +24,9 @@ public class DespegarMainPage {
         alojamientoButton.click();
 
         return new DespegarAlojamientosPage(this.driver);
+    }
+
+    public List<WebElement> getButtonsList() {
+        return buttonsList;
     }
 }
