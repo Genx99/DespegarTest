@@ -9,6 +9,7 @@ import com.selenium.utils.Utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -20,12 +21,23 @@ import java.time.Duration;
 public class DespegarTest {
     //create driver
     WebDriver driver;
+
+    //create waiter
     WebDriverWait wait;
 
-    @BeforeMethod
-    public void initTest() {
+    @BeforeMethod(alwaysRun = true)
+    public void initTest(ITestContext context) {
+        //recibir navegador de suite
+        String navegadorSuite = context.getCurrentXmlTest().getParameter("Navegador");
+        String navegador = navegadorSuite != null ? navegadorSuite : "CHROME";
+
+        //establecer sitio
+        String url = "https://www.despegar.com.ar";
+
         //init driver
-        driver = Driver.LevantarBrowser(driver, "CHROME", "https://www.despegar.com.ar");
+        driver = Driver.LevantarBrowser(driver, navegador, url);
+
+        //init waiter
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
@@ -70,7 +82,7 @@ public class DespegarTest {
         Assert.assertTrue(hotelPage.modificarModalIsOpen(), "El modal no se abre");
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void cerrarSesion() {
         Driver.CloseBrowser(driver);
     }
