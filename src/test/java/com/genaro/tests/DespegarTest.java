@@ -5,6 +5,7 @@ import com.selenium.pages.DespegarAlojamientosPage;
 import com.selenium.pages.DespegarHotelPage;
 import com.selenium.pages.DespegarMainPage;
 import com.selenium.pages.DespegarResultsPage;
+import com.selenium.utils.Utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;

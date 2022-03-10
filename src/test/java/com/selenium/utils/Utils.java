@@ -1,4 +1,4 @@
-package com.genaro.tests;
+package com.selenium.utils;
 
 import org.openqa.selenium.WebDriver;
 
