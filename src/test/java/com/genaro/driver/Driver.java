@@ -1,4 +1,4 @@
-package com.selenium.driver;
+package com.genaro.driver;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

@@ -1,11 +1,10 @@
 package com.genaro.tests;
 
-import com.selenium.driver.Driver;
-import com.selenium.pages.DespegarAlojamientosPage;
-import com.selenium.pages.DespegarHotelPage;
-import com.selenium.pages.DespegarMainPage;
-import com.selenium.pages.DespegarResultsPage;
-import com.selenium.utils.Utils;
+import com.genaro.driver.Driver;
+import com.genaro.pages.DespegarAlojamientosPage;
+import com.genaro.pages.DespegarHotelPage;
+import com.genaro.pages.DespegarMainPage;
+import com.genaro.pages.DespegarResultsPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -14,6 +13,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import com.genaro.utils.Utils;
 
 import java.util.List;
 

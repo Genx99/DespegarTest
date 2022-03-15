@@ -1,8 +1,8 @@
 package com.genaro.tests;
 
-import com.selenium.driver.Driver;
-import com.selenium.pages.WikiHomePage;
-import com.selenium.pages.WikiResultsPage;
+import com.genaro.driver.Driver;
+import com.genaro.pages.WikiHomePage;
+import com.genaro.pages.WikiResultsPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.ITestContext;

@@ -1,4 +1,4 @@
-package com.selenium.pages;
+package com.genaro.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
