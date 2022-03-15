@@ -47,6 +47,7 @@ public class Driver {
         //maximizamos el navegador
         driver.manage().window().maximize();
 
+        //navegamos hacia la pagina
         driver.get(url);
 
         return driver;
