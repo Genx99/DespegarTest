@@ -7,9 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 
 public class DespegarHotelPage {
     @FindBy(css = "div.re-search-main-col>ul li>a em")
-    WebElement buttonModificar;
+    private WebElement buttonModificar;
     @FindBy(css = "aloha-re-search>div.-show-content")
-    WebElement modificarModal;
+    private WebElement modificarModal;
 
     private WebDriver driver = null;
 

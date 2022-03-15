@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class WikiHomePage {
     @FindBy(id = "searchInput")
-    WebElement searchInput;
+    private WebElement searchInput;
 
     private WebDriver driver = null;
 

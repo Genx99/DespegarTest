@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class WikiResultsPage {
     @FindBy(id = "firstHeading")
-    WebElement tituloResultado;
+    private WebElement tituloResultado;
 
     private WebDriver driver = null;
 

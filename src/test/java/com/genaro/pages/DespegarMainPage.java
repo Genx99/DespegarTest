@@ -9,9 +9,9 @@ import java.util.List;
 
 public class DespegarMainPage {
     @FindBy(css = "div.header-products-container>ul>li>a[title='Alojamientos']")
-    WebElement alojamientoButton;
+    private WebElement alojamientoButton;
     @FindBy(css = "div.header-products-container ul li")
-    List<WebElement> buttonsList;
+    private List<WebElement> buttonsList;
 
     private WebDriver driver = null;
 
