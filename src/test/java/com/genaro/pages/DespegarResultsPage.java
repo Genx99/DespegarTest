@@ -21,12 +21,14 @@ public class DespegarResultsPage {
     }
 
     public DespegarHotelPage seleccionarHotel() {
+        inputSeleccionar.click();
+
         return new DespegarHotelPage(this.driver);
     }
 
     public boolean hotelExist() {
         try{
-            inputSeleccionar.click();
+            inputSeleccionar.isDisplayed();
             return true;
         }catch (Exception e){
             Reporter.log("No hay hoteles disponibles en esta locacion");
