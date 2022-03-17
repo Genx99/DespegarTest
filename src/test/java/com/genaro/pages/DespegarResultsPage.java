@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Reporter;
 
 public class DespegarResultsPage {
     private WebDriver driver = null;
@@ -17,9 +18,13 @@ public class DespegarResultsPage {
         PageFactory.initElements(driver, this);
     }
 
-    public DespegarHotelPage seleccionarHotel() {
-        inputSeleccionar.click();
-
-        return new DespegarHotelPage(this.driver);
+    public DespegarHotelPage seleccionarHotel() throws Exception {
+        try{
+            inputSeleccionar.click();
+            return new DespegarHotelPage(this.driver);
+        }catch (Exception e){
+            Reporter.log("No hay hoteles disponibles en esta locacion");
+            throw new Error("No hay hoteles disponibles en esta locacion");
+        }
     }
 }

@@ -66,7 +66,7 @@ public class DespegarTest {
         //buscar
         DespegarResultsPage resultsPage = alojamientosPage.buscarHoteles();
 
-        //seleccionar hotel
+        //seleccionar hotel si hay alguno disponible
         DespegarHotelPage hotelPage = resultsPage.seleccionarHotel();
 
         //hacer focus en la nueva pestaña

@@ -49,10 +49,11 @@ public class DespegarAlojamientosPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void ingresarCiudad(String text) {
+    public void ingresarCiudad(String text) throws Exception {
         wait.until(ExpectedConditions.elementToBeClickable(inputCiudad));
         inputCiudad.click();
         inputCiudad.sendKeys(text);
+        Thread.sleep(100);
         inputCiudad.sendKeys(Keys.CONTROL);
         wait.until(ExpectedConditions.elementToBeClickable(modalCiudad));
         inputCiudad.sendKeys(Keys.ENTER);
