@@ -66,14 +66,21 @@ public class DespegarTest {
         //buscar
         DespegarResultsPage resultsPage = alojamientosPage.buscarHoteles();
 
-        //seleccionar hotel si hay alguno disponible
-        DespegarHotelPage hotelPage = resultsPage.seleccionarHotel();
+        //comprobar si hay hoteles disponibles
+        if(resultsPage.hotelExist()) {
+            //seleccionar hotel
+            DespegarHotelPage hotelPage = resultsPage.seleccionarHotel();
 
-        //hacer focus en la nueva pestaña
-        Utils.changePage(driver);
+            //hacer focus en la nueva pestaña
+            Utils.changePage(driver);
 
-        //Testear funcionalidad "Modificar"
-        Assert.assertTrue(hotelPage.modificarModalIsOpen(), "El modal no se abre");
+            //Testear funcionalidad "Modificar"
+            Assert.assertTrue(hotelPage.modificarModalIsOpen(), "El modal no se abre");
+
+        }else {
+            //verificar que exista un mensaje que adivierta que no hay hoteles disponibles
+            Assert.assertTrue(resultsPage.noHotelsMessageIsVisible(), "No existe un mensaje que informe que no se encuentran hoteles disponibles en esta locacion");
+        }
     }
 
     @Test(groups={"Test Buttons"}, description = "Test botones de seccion")
