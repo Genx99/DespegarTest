@@ -9,7 +9,7 @@ public class DespegarHotelPage {
     @FindBy(css = "div.re-search-main-col>ul li>a em")
     private WebElement buttonModificar;
     @FindBy(css = "aloha-re-search>div.-show-content")
-    private WebElement modificarModal;
+    private WebElement modificarMenu;
 
     private WebDriver driver = null;
 
@@ -19,9 +19,9 @@ public class DespegarHotelPage {
         PageFactory.initElements(driver, this);
     }
 
-    public boolean modificarModalIsOpen() {
+    public boolean modificarMenuIsOpen() {
         buttonModificar.click();
 
-        return modificarModal.isDisplayed();
+        return modificarMenu.isDisplayed();
     }
 }

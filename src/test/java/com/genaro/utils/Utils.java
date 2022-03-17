@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import java.util.Set;
 
 public class Utils {
-    public static void changePage(WebDriver driver) {
+    public static void changeTab(WebDriver driver) {
         Set<String> handles = driver.getWindowHandles();
 
         for(String actual : handles) {

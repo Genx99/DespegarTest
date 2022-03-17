@@ -72,10 +72,10 @@ public class DespegarTest {
             DespegarHotelPage hotelPage = resultsPage.seleccionarHotel();
 
             //hacer focus en la nueva pestaña
-            Utils.changePage(driver);
+            Utils.changeTab(driver);
 
             //Testear funcionalidad "Modificar"
-            Assert.assertTrue(hotelPage.modificarModalIsOpen(), "El modal no se abre");
+            Assert.assertTrue(hotelPage.modificarMenuIsOpen(), "El menu no se abre");
 
         }else {
             //verificar que exista un mensaje que adivierta que no hay hoteles disponibles

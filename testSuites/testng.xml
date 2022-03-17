@@ -7,10 +7,10 @@
             <run>
                 <!-- Despegar Test -->
                 <include name="Navegar a Hotel"/>
-                <exclude name="Test Buttons"/>
+                <include name="Test Buttons"/>
 
                 <!-- Wiki Test -->
-                <include name="Test Busquedas" />
+                <exclude name="Test Busquedas" />
             </run>
         </groups>
         <classes>
